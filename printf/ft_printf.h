@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luis <luis@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 16:05:49 by luisanch          #+#    #+#             */
-/*   Updated: 2023/01/19 16:00:24 by luis             ###   ########.fr       */
+/*   Created: 2023/01/17 15:44:35 by luisanch          #+#    #+#             */
+/*   Updated: 2023/01/19 16:01:02 by luis             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h" 
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-void	ft_putstr(char *x)
-{
-	while (*x)
-	{
-		write(1, &x, 1);
-		x++;
-	}
-}
+# include <string.h>
+# include <stdlib.h> 
+# include <unistd.h>
+
+int	ft_printf(const char *x, ...);
+int	ft_putchar(char c);
+int	ft_putstr(char *x);
+
+#endif
