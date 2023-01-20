@@ -3,10 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putintu.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luisanch <luisanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luis <luis@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:27:54 by luisanch          #+#    #+#             */
-/*   Updated: 2023/01/19 17:27:55 by luisanch         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:12:11 by luis             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
+int ft_chooseformat(char f, va_list arg)
+{
+    int
+}

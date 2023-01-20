@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luisanch <luisanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luis <luis@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:49:38 by luisanch          #+#    #+#             */
-/*   Updated: 2023/01/19 17:27:04 by luisanch         ###   ########.fr       */
+/*   Updated: 2023/01/20 17:49:38 by luis             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *x, ...)
 {
@@ -24,11 +24,11 @@ int	ft_printf(const char *x, ...)
 	while (*x)
 	{
 		if (*x != '%')
-			n += ft_putchar(*x);
+			n += ft_putchar(x[0]);
 		else
 		{
 			x++;
-			n += ft_chooseformat (*x, arg);
+			n += ft_chooseformat (x[0], arg);
 		}
 		x++;
 	}
