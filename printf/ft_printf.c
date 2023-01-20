@@ -6,7 +6,7 @@
 /*   By: luis <luis@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:49:38 by luisanch          #+#    #+#             */
-/*   Updated: 2023/01/20 17:49:38 by luis             ###   ########.fr       */
+/*   Updated: 2023/01/20 18:25:01 by luis             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_printf(const char *x, ...)
 {
-	va_list arg; /*es una lista de argumentos*/
-	int n;
+	va_list	arg;
+	int		n;
 
 	if (!x)
 		return (0);

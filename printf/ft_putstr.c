@@ -6,7 +6,7 @@
 /*   By: luis <luis@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:05:49 by luisanch          #+#    #+#             */
-/*   Updated: 2023/01/20 18:00:24 by luis             ###   ########.fr       */
+/*   Updated: 2023/01/20 19:08:27 by luis             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_putstr(char *x)
 {
-	int cont;
+	int	cont;
 
 	cont = 0;
 	while (x[cont])
 	{
-		write(1, &x[cont],1);
+		write(1, &x[cont], 1);
 		cont++;
 	}
-	return(cont);
+	return (cont);
 }

@@ -3,11 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putint.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luisanch <luisanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luis <luis@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 17:21:41 by luisanch          #+#    #+#             */
-/*   Updated: 2023/01/19 17:28:34 by luisanch         ###   ########.fr       */
+/*   Created: 2023/01/20 23:38:01 by luis              #+#    #+#             */
+/*   Updated: 2023/01/20 23:54:55 by luis             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int_puthexa
+#include "ft_printf.h"
+
+int	ft_putint(int n)
+{
+	unsigned int		num;
+	int					i;
+
+	i = 0;
+	if (n < 0)
+	{
+		i = ft_putchar('-');
+		num = n * -1;
+	}
+	else
+	{
+		num = n;
+	}
+	if (num >= 10)
+	{
+		i += ft_putint(num / 10);
+	}
+	i += ft_putchar(num % 10 + '0');
+	return (i);
+}

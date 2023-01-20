@@ -6,7 +6,7 @@
 #    By: luis <luis@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 14:48:02 by luisanch          #+#    #+#              #
-#    Updated: 2023/01/20 18:02:33 by luis             ###   ########.fr        #
+#    Updated: 2023/01/20 23:49:27 by luis             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 UTILS = ft_printf.c ft_putchar.c ft_putstr.c ft_puthexa.c \
-		ft_putint.c ft_putintu.c
+		ft_putint.c ft_putintu.c ft_chooseformat.c 
 		
 
 OBJS = $(UTILS:.c=.o)
