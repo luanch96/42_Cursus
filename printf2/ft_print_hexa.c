@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_print_hexa.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luis <luis@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 12:56:36 by luis              #+#    #+#             */
-/*   Updated: 2023/01/27 17:41:00 by luis             ###   ########.fr       */
+/*   Created: 2023/01/27 14:25:32 by luis              #+#    #+#             */
+/*   Updated: 2023/01/27 17:40:47 by luis             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(char const *format, ...)
+int	ft_puthexa(unsigned long n, char w)
 {
-	va_list	arg;
-	int		n;
+	int	i;
 
-	if (!format)
-		return (0);
-	va_start(arg, format);
-	n = 0;
-	while (*format)
+	i = 0;
+	if (w == 'x' || w == 'p')
 	{
-		if (*format != '%')
-			n = n + ft_putchar(*format);
-		if (*format == '%')
-		{
-			format++;
-			n = n + ft_choose_format(arg, *format);
-		}
-		format++;
+		if (n >= 16)
+			i += ft_puthexa(n / 16, w);
+		i += ft_putchar("0123456789abcdef"[n % 16]);
 	}
-	va_end(arg);
-	return (n);
+	else if (w == 'X')
+		if (n >= 16)
+			i += ft_putchar("0123456789abcdef"[n % 16]);
+	return (i);
 }
-	

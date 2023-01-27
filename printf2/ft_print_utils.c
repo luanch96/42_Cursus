@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_print_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luis <luis@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 12:56:36 by luis              #+#    #+#             */
-/*   Updated: 2023/01/27 17:41:00 by luis             ###   ########.fr       */
+/*   Created: 2023/01/27 14:48:59 by luis              #+#    #+#             */
+/*   Updated: 2023/01/27 17:40:56 by luis             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(char const *format, ...)
+int	ft_putchar(char c)
 {
-	va_list	arg;
-	int		n;
-
-	if (!format)
-		return (0);
-	va_start(arg, format);
-	n = 0;
-	while (*format)
-	{
-		if (*format != '%')
-			n = n + ft_putchar(*format);
-		if (*format == '%')
-		{
-			format++;
-			n = n + ft_choose_format(arg, *format);
-		}
-		format++;
-	}
-	va_end(arg);
-	return (n);
+	write(1, &c, 1);
+	return (1);
 }
-	
+
+int	ft_putstr(char *x)
+{
+	int	cont;
+
+	cont = 0;
+	while (x[cont])
+	{
+		write(1, &x[cont], 1);
+		cont++;
+	}
+	return (cont);
+}
