@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: luis <luis@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 17:55:28 by luis              #+#    #+#             */
-/*   Updated: 2023/01/25 17:55:40 by luis             ###   ########.fr       */
+/*   Created: 2023/01/19 17:21:37 by luisanch          #+#    #+#             */
+/*   Updated: 2023/01/25 12:51:23 by luis             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,5 @@ int	ft_puthexa(size_t n, char f)
 	}
 	return (i);
 }
+
+/*'x = minusculas en mayusculas'*/ /*p->puntero impreso en formato hexadecimal*/

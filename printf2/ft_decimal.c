@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: luis <luis@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 14:13:34 by luis              #+#    #+#             */
-/*   Updated: 2023/01/25 17:52:41 by luis             ###   ########.fr       */
+/*   Created: 2023/01/20 23:38:01 by luis              #+#    #+#             */
+/*   Updated: 2023/01/25 13:14:24 by luis             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,3 +47,5 @@ int	ft_putintu(unsigned int n)
 	i += ft_putchar(n % 10 + '0');
 	return (i);
 }
+
+/*Imprime numero decimal en base a 10(tambien un entero)*/
