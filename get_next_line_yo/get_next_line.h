@@ -6,7 +6,7 @@
 /*   By: luisanch <luisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:16:10 by luisanch          #+#    #+#             */
-/*   Updated: 2023/03/13 18:31:02 by luisanch         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:45:25 by luisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
 
 size_t	ft_strlen(char *s);
 char	*ft_strchr(char *s, int c);
-char	*ft_strjoin(char *stat_point, char *buff);
+char	*ft_strjoin(char *str1, char *str2);
+char	*ft_strdup(char *string1);
 char	*ft_get_line(char *stat_point);
 char	*ft_new_left_str(char *stat_point);
 char	*ft_read_to_static_point(int fd, char *stat_point);

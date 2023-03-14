@@ -6,11 +6,9 @@
 /*   By: luisanch <luisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:17:39 by luisanch          #+#    #+#             */
-/*   Updated: 2023/03/13 18:43:40 by luisanch         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:49:17 by luisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "get_next_line.h"
 
 #include "get_next_line.h"
 
@@ -28,100 +26,63 @@ size_t	ft_strlen(char *s)
 
 char	*ft_strchr(char *s, int c)
 {
-	int	i;
-
-	i = 0;
 	if (!s)
 		return (0);
 	if (c == '\0')
 		return ((char *)&s[ft_strlen(s)]);
-	while (s[i] != '\0')
+	while (*s != (char)c)
 	{
-		if (s[i] == (char) c)
-			return ((char *)&s[i]);
-		i++;
+		if (!*s)
+		{
+			return (0);
+		}
+		s++;
 	}
-	return (0);
+	return (s);
 }
 
-char	*ft_strjoin(char *left_str, char *buff)
+char	*ft_strjoin(char *str1, char *str2)
 {
 	size_t	i;
 	size_t	j;
 	char	*str;
 
-	if (!left_str)
-	{
-		left_str = (char *)malloc(1 * sizeof(char));
-		left_str[0] = '\0';
-	}
-	if (!left_str || !buff)
+	if (!str1 || !str2)
 		return (NULL);
-	str = malloc(sizeof(char) * ((ft_strlen(left_str) + ft_strlen(buff)) + 1));
+	str = malloc(sizeof(char) * ((ft_strlen(str1) + ft_strlen(str2)) + 1));
 	if (str == NULL)
 		return (NULL);
-	i = -1;
+	i = 0;
 	j = 0;
-	if (left_str)
-		while (left_str[++i] != '\0')
-			str[i] = left_str[i];
-	while (buff[j] != '\0')
-		str[i++] = buff[j++];
-	str[ft_strlen(left_str) + ft_strlen(buff)] = '\0';
-	free(left_str);
+	if (str1)
+		while (str1[i] != '\0')
+		{
+			str[i] = str1[i];
+			i++;
+		}	
+		while (str2[j] != '\0')
+			str[i++] = str2[j++];
+		str[ft_strlen(str1) + ft_strlen(str2)] = '\0';
+		free(str1);
 	return (str);
 }
 
-char	*ft_get_line(char *left_str)
+char	*ft_strdup(char *string1)
 {
-	int		i;
-	char	*str;
+	size_t		x;
+	size_t		lenght;
+	char		*string2;
 
-	i = 0;
-	if (!left_str[i])
+	lenght = ft_strlen(string1);
+	string2 = (char *)malloc(sizeof(*string2) * (lenght + 1));
+	if (!string2)
 		return (NULL);
-	while (left_str[i] && left_str[i] != '\n')
-		i++;
-	str = (char *)malloc(sizeof(char) * (i + 2));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (left_str[i] && left_str[i] != '\n')
+	x = 0;
+	while (x < lenght)
 	{
-		str[i] = left_str[i];
-		i++;
+		string2[x] = string1[x];
+		x++;
 	}
-	if (left_str[i] == '\n')
-	{
-		str[i] = left_str[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
-
-char	*ft_new_left_str(char *left_str)
-{
-	int		i;
-	int		j;
-	char	*str;
-
-	i = 0;
-	while (left_str[i] && left_str[i] != '\n')
-		i++;
-	if (!left_str[i])
-	{
-		free(left_str);
-		return (NULL);
-	}
-	str = (char *)malloc(sizeof(char) * (ft_strlen(left_str) - i + 1));
-	if (!str)
-		return (NULL);
-	i++;
-	j = 0;
-	while (left_str[i])
-		str[j++] = left_str[i++];
-	str[j] = '\0';
-	free(left_str);
-	return (str);
+	(string2[x] = '\0');
+	return (string2);
 }
